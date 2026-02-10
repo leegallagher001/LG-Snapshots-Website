@@ -1,0 +1,155 @@
+/* GENERAL */
+
+body {
+    background-color: #faf9f4;
+    font-family: "Syncopate", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* HEADER */
+
+header {
+    display: inline-block;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #FAF9F4;
+    background-color: peru;
+    font-size: 1.5em;
+}
+
+.header-logos {
+    display: block;
+    width: 10%;
+}
+
+/* NAVIGATION BAR */
+
+.hamburger-menu {
+	position: relative;
+	width: 100%;
+	background-color: #A8FCB0;
+	color: #5E4C06;
+	display: block;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+#hamburger-icon {
+    padding: 10px 0px 10px 0px;
+	font-size: 2em;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#menu {
+	position: absolute;
+	top: 60px;
+	left: 0;
+    width: 100%;
+    background-color: #A8FCB0;
+    color: #5E4C06;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu a {
+    width: 100%;
+	padding: 10px 0px 10px 0px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.5em;
+	background-color: #A8FCB0;
+    color: #532D02;
+}
+
+#menu a:hover {
+	background-color: #5E4C06;
+	color: #F4F0E4;
+	transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.dropdown-menu #menu {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	animation: slideDown 0.5s ease-in-out; /* calls keyframe slideDown (shown below) */
+}
+
+@keyframes slideDown { /* creates slide down effect for dropdown menu */
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+/* MAIN */
+
+main {
+    display: inline-block;
+    width: 100%;
+}
+
+/* FOOTER */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background-color: #5E4C06;
+    color: #F4F0E4; 
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #FAF9F4;
+    background-color: peru;
+    font-size: 1.25em;
+}
+
+/* ----- RESPONSIVES (MOBILE DESIGN) ----- */
+
+@media screen and (min-width: 800px) {
+
+    #hamburger-icon {
+        display: none;
+        padding: 0;
+    }
+
+    #menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        top: 0;
+    }
+
+    #menu a {
+        width: 25%;
+        font-size: 1em;
+    }
+
+    main {
+        transform: translateY(49.6px);
+    }
+
+}
