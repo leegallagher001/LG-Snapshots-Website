@@ -1,7 +1,7 @@
 /* GENERAL */
 
 body {
-    background-color: #faf9f4;
+    background-color: #ffe7d4;
     font-family: "Syncopate", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -34,8 +34,8 @@ header {
 .hamburger-menu {
 	position: relative;
 	width: 100%;
-	background-color: #A8FCB0;
-	color: #5E4C06;
+	background-color: #572E05;
+	color: #FAF9F4;
 	display: block;
 	justify-content: center;
 	align-items: center;
@@ -56,8 +56,8 @@ header {
 	top: 60px;
 	left: 0;
     width: 100%;
-    background-color: #A8FCB0;
-    color: #5E4C06;
+    background-color: #572E05;
+    color: #FAF9F4;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -69,13 +69,13 @@ header {
 	text-decoration: none;
 	text-align: center;
 	font-size: 1.5em;
-	background-color: #A8FCB0;
-    color: #532D02;
+	background-color: #572E05;
+    color: #FAF9F4;
 }
 
 #menu a:hover {
-	background-color: #5E4C06;
-	color: #F4F0E4;
+	background-color: #FAF9F4;
+	color: #572E05;
 	transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
 }
 
@@ -103,6 +103,7 @@ header {
 main {
     display: inline-block;
     width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* FOOTER */
@@ -129,7 +130,9 @@ footer {
 
 /* ----- RESPONSIVES (MOBILE DESIGN) ----- */
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) { /* Screen larger than 950px (desktop) */
+
+    /* NAV */
 
     #hamburger-icon {
         display: none;
@@ -150,6 +153,31 @@ footer {
 
     main {
         transform: translateY(49.6px);
+    }
+
+}
+
+@media screen and (max-width: 950px) { /* Screen smaller than 950px (mobile) */
+
+    /* HEADER */
+
+    header {
+        font-size: 0.7em;
+    }
+
+    .header-container {
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #logo-left {
+        display: none;
+    }
+
+    /* FOOTER */
+
+    footer {
+        font-size: 0.7em;
     }
 
 }
