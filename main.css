@@ -5,6 +5,14 @@ body {
     font-family: "Syncopate", sans-serif;
     font-weight: 700;
     font-style: normal;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards; /* calls keyframe fadeIn (shown below) */
+}
+
+@keyframes fadeIn { /* creates fade in animation when page is loaded */
+    to {
+        opacity: 1;
+    }
 }
 
 /* HEADER */
@@ -103,7 +111,10 @@ header {
 main {
     display: inline-block;
     width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* FOOTER */
@@ -128,6 +139,42 @@ footer {
     font-size: 1.25em;
 }
 
+/* --- DIARY ARTICLES PAGE (diary-articles.html) --- */
+
+.articles-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-link {
+    display: block;
+    width: 100%;
+    background-color: #5E4C06;
+    color: #FAF9F4;
+    margin-bottom: 10px;
+}
+
+.article-link a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+    font-family: "Syncopate", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.article-link a:hover {
+    background-color: #FAF9F4;
+    color: #5E4C06;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.article-link h3 {
+    margin: 20px 20px 20px 20px;
+}
+
 /* ----- RESPONSIVES (MOBILE DESIGN) ----- */
 
 @media screen and (min-width: 950px) { /* Screen larger than 950px (desktop) */
@@ -135,11 +182,11 @@ footer {
     /* NAV */
 
     #hamburger-icon {
-        display: none;
+        display: none; /* Hamburger menu hidden in desktop view */
         padding: 0;
     }
 
-    #menu {
+    #menu { /* Navigation bar displayed in desktop view */
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -171,7 +218,17 @@ footer {
     }
 
     #logo-left {
-        display: none;
+        display: none; /* hides left-hand logo in the smaller mobile view */
+    }
+
+    #logo-right {
+        border-radius: 50%; /* circularises the right-hand logo in the smaller mobile view */
+    }
+
+    /* MAIN */
+
+    main {
+        padding-bottom: 60px;
     }
 
     /* FOOTER */
